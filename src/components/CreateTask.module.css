@@ -23,11 +23,12 @@
 }
 
 .form button {
-  width: 5rem;
+  width: 5.875rem;
   border-radius: 8px;
   background-color: var(--blue-dark);
+  color: var(--gray-100);
   border: 0;
-  /* padding: 1rem; */
+  padding: 1rem;
 
   display: flex;
   flex-direction: row;
@@ -36,9 +37,14 @@
   gap: 0.5rem;
 }
 
-.form button {
+.form button:hover {
+  background-color: var(--blue);
+  color: var(--gray-250);
+  cursor: pointer;
+}
+
+.form button span {
   font-weight: 700;
   font-size: 0.875rem;
   line-height: 140%;
-  color: var(--gray-100);
 }
