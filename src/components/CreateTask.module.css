@@ -18,6 +18,10 @@
   color: var(--gray-100);
 }
 
+.form input:hover {
+  box-shadow: 0 0 0 2px var(--purple-dark);
+}
+
 .form input::placeholder {
   color: var(--gray-300);
 }
