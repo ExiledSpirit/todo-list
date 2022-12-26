@@ -1,0 +1,53 @@
+.container {
+  text-align: start;
+  padding: 1rem;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.container .descriptionContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.container .descriptionContainer .taskDescription {
+  flex: 1;
+}
+
+.container .descriptionContainer .doneTaskDescription {
+  flex: 1;
+  text-decoration:line-through;
+  color: var(--gray-300);
+}
+
+.container .trashCan {
+  height: 1.5rem;
+  width: 1.5rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  line-break: 0;
+  border-radius: 4px;
+  color: var(--gray-300);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .trashCan:hover {
+  color: var(--danger);
+  background-color: var(--gray-400);
+}

@@ -12,10 +12,18 @@
 
 .header .created {
   color: var(--blue);
+  
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .header .done {
   color: var(--purple);
+  
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .header .counter {

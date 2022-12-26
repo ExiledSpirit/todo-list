@@ -1,7 +1,9 @@
-import { v4 } from 'uuid';
+import { v4 as randomUUID } from 'uuid';
+import { Replace } from '../helpers/Replace';
 
 export interface TaskProps {
   doneAt?: Date | null,
+  createdAt: Date,
   description: string
 }
 
@@ -9,10 +11,11 @@ export class Task {
   private _id: string;
   private props: TaskProps;
 
-  constructor(props: TaskProps, id?: string) {
-    this._id = id ?? v4();
+  constructor(props: Replace<TaskProps, { createdAt?: Date }>, id?: string) {
+    this._id = id ?? randomUUID();
     this.props = {
       ...props,
+      createdAt: props.createdAt ?? new Date(),
     };
   }
 
@@ -28,15 +31,19 @@ export class Task {
     this.props.doneAt = null;
   }
 
-  public get readAt(): Date | null | undefined {
+  public get doneAt(): Date | null | undefined {
     return this.props.doneAt;
   }
 
   get description(): string {
-    return this.description;
+    return this.props.description;
   }
 
   set description(description: string) {
     this.description = description;
+  }
+
+  public get createdAt(): Date {
+    return this.props.createdAt;
   }
 }

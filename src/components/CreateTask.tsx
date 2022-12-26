@@ -9,7 +9,7 @@ interface CreateTaskProps {
 export function CreateTask({addTask}: CreateTaskProps) {
   const [newTask, setNewTask] = useState('');
 
-  console.log(newTask);
+  const isNewTaskEmpty = newTask.length === 0;
   
   function handleNewTaskChange(event: ChangeEvent<HTMLInputElement>) {
     setNewTask(event.target.value);
@@ -34,8 +34,15 @@ export function CreateTask({addTask}: CreateTaskProps) {
         spellCheck='false'
         value={newTask}
         onChange={handleNewTaskChange}
+        required
       />
-      <button><span>Criar</span><PlusCircle size={20} /></button>
+      <button
+        type='submit'
+        disabled={isNewTaskEmpty}
+      >
+        <span>Criar</span>
+        <PlusCircle size={20} />
+      </button>
     </form>
   );
 }
